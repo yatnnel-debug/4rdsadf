@@ -1,0 +1,14 @@
+🔧 Конфигурация GetGems WebApp:
+   BOT_TOKEN: ✅ Установлен
+   WEBAPP_URL: https://getgerrmt.sbs
+   DATABASE_PATH: getgems.db
+   LOG_LEVEL: INFO
+   LOG_GROUP_ID: -1003469168325
+   ADMIN_IDS: 4 администраторов
+   FLASK: 0.0.0.0:5000 (debug=False)
+ * Serving Flask app 'app'
+ * Debug mode: off
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+2025-12-16 17:06:36,630 - telegram_bot - ERROR - Ошибка запуска бота: Telegram server says - Unauthorized
+2025-12-16 17:06:38,210 - __main__ - ERROR - Flask сервер завершился неожиданно!

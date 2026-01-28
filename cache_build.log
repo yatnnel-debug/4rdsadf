@@ -1,0 +1,126 @@
+nohup: ignoring input
+╔════════════════════════════════════════════════════════╗
+║   Построение кэша данных подарков из API changes.tg   ║
+╚════════════════════════════════════════════════════════╝
+
+📦 Найдено 107 подарков для кэширования
+
+🔄 Загружаю данные для 107 подарков...
+✅ Загружен кэш подарков: 17 подарков
+  [1/107] Artisan Brick... ❌ HTTPSConnectionPool(host='api.changes.tg', port=44
+  [2/107] Astral Shard... ✅ M:50 P:198 B:60
+  [3/107] B-Day Candle... ✅ M:100 P:256 B:60
+  [4/107] Berry Box... ✅ M:70 P:191 B:60
+  [5/107] Big Year... ✅ M:55 P:256 B:80
+  [6/107] Bling Binky... ✅ M:50 P:200 B:80
+  [7/107] Bonded Ring... ✅ M:50 P:262 B:80
+  [8/107] Bow Tie... ✅ M:50 P:256 B:80
+  [9/107] Bunny Muffin... ✅ M:100 P:189 B:60
+  [10/107] Candy Cane... ✅ M:50 P:138 B:80
+  [11/107] Clover Pin... ✅ M:50 P:250 B:80
+  [12/107] Cookie Heart... ✅ M:100 P:229 B:60
+  [13/107] Crystal Ball... ✅ M:55 P:138 B:60
+  [14/107] Cupid Charm... ✅ M:50 P:200 B:80
+  [15/107] Desk Calendar... ✅ M:100 P:255 B:60
+  [16/107] Diamond Ring... ✅ M:100 P:296 B:60
+  [17/107] Durov's Cap... ✅ M:55 P:198 B:60
+  [18/107] Easter Egg... ✅ M:62 P:256 B:80
+  [19/107] Electric Skull... ❌ HTTPSConnectionPool(host='api.changes.tg', port=44
+  [20/107] Eternal Candle... ✅ M:80 P:136 B:60
+  [21/107] Eternal Rose... ✅ M:50 P:191 B:60
+  [22/107] Evil Eye... ✅ M:50 P:138 B:60
+  [23/107] Faith Amulet... ✅ M:50 P:161 B:80
+  [24/107] Flying Broom... ✅ M:50 P:138 B:60
+  [25/107] Fresh Socks... ✅ M:50 P:250 B:80
+  [26/107] Gem Signet... ✅ M:50 P:262 B:80
+  [27/107] Genie Lamp... ✅ M:49 P:198 B:60
+  [28/107] Ginger Cookie... ✅ M:100 P:136 B:60
+  [29/107] Hanging Star... ✅ M:100 P:138 B:60
+  [30/107] Happy Brownie... ✅ M:50 P:250 B:80
+  [31/107] Heart Locket... ✅ M:60 P:240 B:80
+  [32/107] Heroic Helmet... ✅ M:50 P:262 B:80
+  [33/107] Hex Pot... ✅ M:80 P:138 B:60
+  [34/107] Holiday Drink... ✅ M:50 P:202 B:80
+  [35/107] Homemade Cake... ✅ M:100 P:256 B:60
+  [36/107] Hypno Lollipop... ✅ M:100 P:255 B:60
+  [37/107] Ice Cream... ❌ HTTPSConnectionPool(host='api.changes.tg', port=44
+  [38/107] Input Key... ✅ M:60 P:250 B:80
+  [39/107] Instant Ramen... ✅ M:50 P:250 B:80
+  [40/107] Ion Gem... ✅ M:56 P:262 B:60
+  [41/107] Ionic Dryer... ✅ M:50 P:240 B:80
+  [42/107] Jack-in-the-Box... ✅ M:58 P:256 B:80
+  [43/107] Jelly Bunny... ✅ M:99 P:256 B:60
+  [44/107] Jester Hat... ✅ M:100 P:255 B:60
+  [45/107] Jingle Bells... ✅ M:100 P:138 B:60
+  [46/107] Jolly Chimp... ✅ M:50 P:250 B:80
+  [47/107] Joyful Bundle... ✅ M:50 P:200 B:80
+  [48/107] Khabib's Papakha... ✅ M:56 P:161 B:80
+  [49/107] Kissed Frog... ✅ M:50 P:229 B:60
+  [50/107] Light Sword... ✅ M:52 P:256 B:80
+  [51/107] Lol Pop... ✅ M:100 P:256 B:60
+  [52/107] Loot Bag... ✅ M:80 P:262 B:60
+  [53/107] Love Candle... ✅ M:50 P:189 B:60
+  [54/107] Love Potion... ✅ M:70 P:264 B:60
+  [55/107] Low Rider... ✅ M:50 P:175 B:80
+  [56/107] Lunar Snake... ✅ M:100 P:136 B:60
+  [57/107] Lush Bouquet... ❌ HTTPSConnectionPool(host='api.changes.tg', port=44
+  [58/107] Mad Pumpkin... ✅ M:50 P:138 B:60
+  [59/107] Magic Potion... ✅ M:50 P:138 B:60
+  [60/107] Mighty Arm... ✅ M:50 P:200 B:80
+  [61/107] Mini Oscar... ✅ M:100 P:262 B:60
+  [62/107] Money Pot... ✅ M:50 P:250 B:80
+  [63/107] Moon Pendant... ✅ M:50 P:161 B:80
+  [64/107] Mousse Cake... ✅ M:50 P:225 B:80
+  [65/107] Nail Bracelet... ✅ M:50 P:262 B:80
+  [66/107] Neko Helmet... ✅ M:60 P:262 B:80
+  [67/107] Party Sparkler... ✅ M:100 P:136 B:60
+  [68/107] Perfume Bottle... ✅ M:50 P:288 B:60
+  [69/107] Pet Snake... ✅ M:60 P:136 B:80
+  [70/107] Plush Pepe... ✅ M:50 P:280 B:60
+  [71/107] Precious Peach... ✅ M:80 P:288 B:60
+  [72/107] Pretty Posy... ❌ HTTPSConnectionPool(host='api.changes.tg', port=44
+  [73/107] Record Player... ✅ M:100 P:256 B:80
+  [74/107] Restless Jar... ✅ M:50 P:262 B:80
+  [75/107] Sakura Flower... ✅ M:100 P:256 B:80
+  [76/107] Santa Hat... ✅ M:70 P:138 B:60
+  [77/107] Scared Cat... ✅ M:50 P:138 B:60
+  [78/107] Sharp Tongue... ✅ M:50 P:229 B:60
+  [79/107] Signet Ring... ✅ M:50 P:198 B:60
+  [80/107] Skull Flower... ✅ M:50 P:229 B:60
+  [81/107] Sky Stilettos... ✅ M:50 P:200 B:80
+  [82/107] Sleigh Bell... ✅ M:50 P:256 B:80
+  [83/107] Snake Box... ✅ M:70 P:136 B:80
+  [84/107] Snoop Cigar... ✅ M:50 P:175 B:80
+  [85/107] Snoop Dogg... ✅ M:50 P:250 B:80
+  [86/107] Snow Globe... ✅ M:50 P:136 B:80
+  [87/107] Snow Mittens... ✅ M:100 P:138 B:60
+  [88/107] Spiced Wine... ✅ M:100 P:256 B:60
+  [89/107] Spring Basket... ✅ M:50 P:200 B:80
+  [90/107] Spy Agaric... ❌ HTTPSConnectionPool(host='api.changes.tg', port=44
+  [91/107] Star Notepad... ✅ M:100 P:256 B:60
+  [92/107] Stellar Rocket... ✅ M:50 P:250 B:80
+  [93/107] Swag Bag... ✅ M:50 P:175 B:80
+  [94/107] Swiss Watch... ✅ M:50 P:198 B:60
+  [95/107] Tama Gadget... ✅ M:90 P:256 B:80
+  [96/107] Top Hat... ✅ M:70 P:262 B:80
+  [97/107] Toy Bear... ✅ M:70 P:264 B:60
+  [98/107] Trapped Heart... ✅ M:50 P:229 B:60
+  [99/107] UFC Strike... ✅ M:45 P:150 B:80
+  [100/107] Valentine Box... ✅ M:50 P:175 B:80
+  [101/107] Vintage Cigar... ✅ M:55 P:198 B:60
+  [102/107] Voodoo Doll... ✅ M:50 P:138 B:60
+  [103/107] Westside Sign... ✅ M:50 P:175 B:80
+  [104/107] Whip Cupcake... ✅ M:50 P:175 B:80
+  [105/107] Winter Wreath... ✅ M:70 P:138 B:80
+  [106/107] Witch Hat... ✅ M:100 P:138 B:60
+  [107/107] Xmas Stocking... ✅ M:65 P:202 B:80
+✅ Кэш сохранен: 111 подарков
+
+✅ Кэш обновлен! Успешно: 101/107, Всего в кэше: 111
+
+============================================================
+ГОТОВО!
+Кэш сохранен в: cache/gifts_data.json
+Обновлено: 2025-12-16T02:23:31.312609
+Подарков: 111
+============================================================
