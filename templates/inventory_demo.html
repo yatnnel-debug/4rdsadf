@@ -1,0 +1,364 @@
+{% extends "base.html" %}
+
+{% block title %}Инвентарь - Getgems{% endblock %}
+
+{% block styles %}
+<style>
+    body {
+        background-color: #000000 !important;
+    }
+
+    .inventory-header {
+        padding: 16px;
+        text-align: center;
+        background: #000000;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .header-logo-icon {
+        width: 24px;
+        height: 24px;
+        background: white;
+        mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"/><path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"/><path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"/></svg>') no-repeat center;
+        -webkit-mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"/><path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"/><path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"/></svg>') no-repeat center;
+        background-color: white;
+    }
+    
+    .logo-svg {
+        width: 24px;
+        height: 24px;
+        fill: white;
+    }
+
+    .inventory-title {
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+
+    .gifts-grid {
+        padding: 16px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        background: #000000;
+    }
+
+    .gift-item {
+        background: #1C1C1E;
+        border-radius: 14px;
+        padding: 10px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .gift-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .gift-animation-container {
+        width: 100%;
+        aspect-ratio: 1;
+        background-color: #2C2C2E;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-bottom: 12px;
+        overflow: hidden;
+    }
+    
+    .gift-pattern-bg {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        opacity: 0.05;
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 0L20 10L10 20L0 10L10 0Z' fill='%23ffffff'/%3E%3C/svg%3E");
+        background-size: 20px 20px;
+    }
+
+    .gift-lottie {
+        width: 80%;
+        height: 80%;
+        z-index: 2;
+    }
+
+    .gift-icon-fallback {
+        font-size: 64px;
+        z-index: 2;
+    }
+
+    .gift-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 4px;
+        margin-bottom: 12px;
+    }
+
+    .gift-name {
+        font-size: 16px;
+        font-weight: 700;
+        color: white;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .gift-id {
+        font-size: 14px;
+        color: #8E8E93;
+        font-weight: 400;
+    }
+
+    .gift-actions {
+        width: 100%;
+    }
+
+    .btn-withdraw {
+        width: 100%;
+        background: #007AFF;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 0;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.2s;
+    }
+
+    .btn-withdraw:active {
+        opacity: 0.7;
+    }
+
+    .empty-inventory {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 60px 20px;
+        color: #8E8E93;
+    }
+
+    .empty-icon {
+        font-size: 48px;
+        margin-bottom: 16px;
+        opacity: 0.5;
+    }
+
+    .empty-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: white;
+    }
+
+    .empty-subtitle {
+        font-size: 14px;
+    }
+    
+    .notification {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #32D74B;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 24px;
+        font-weight: 600;
+        z-index: 1000;
+        opacity: 0;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .notification.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="inventory-header">
+    <!-- Simple SVG Logo approximation -->
+    <svg class="logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2.5L3.5 7.5V16.5L12 21.5L20.5 16.5V7.5L12 2.5Z" fill="white"/>
+        <path d="M12 6L16.5 8.5V13.5L12 16L7.5 13.5V8.5L12 6Z" fill="#000000"/>
+        <path d="M12 8.5L14 9.5V11.5L12 12.5L10 11.5V9.5L12 8.5Z" fill="white"/>
+    </svg>
+    <div class="inventory-title">getgems</div>
+</div>
+
+<div id="giftsGrid" class="gifts-grid">
+    <div class="empty-inventory" id="emptyInventory" style="display:none;">
+        <div class="empty-icon">📦</div>
+        <div class="empty-title">Инвентарь пуст</div>
+        <div class="empty-subtitle">Здесь будут отображаться ваши подарки</div>
+    </div>
+</div>
+
+<div id="notification" class="notification"></div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+<script>
+    const tg = window.Telegram.WebApp;
+    if (tg) { 
+        tg.ready(); 
+        tg.expand(); 
+        tg.setHeaderColor('#000000');
+        tg.setBackgroundColor('#000000');
+    }
+
+    function showFallbackIcon(container) {
+        container.innerHTML = '<div class="gift-icon-fallback">🎁</div>';
+    }
+
+    function loadGiftAnimation(container, gift) {
+        container.innerHTML = '';
+        let config = {
+            container,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            rendererSettings: { className: 'gift-lottie' }
+        };
+
+        if (gift.animation_data) {
+            config.animationData = gift.animation_data;
+        } else if (gift.lottie_url) {
+            config.path = gift.lottie_url;
+        } else {
+            return showFallbackIcon(container);
+        }
+
+        try {
+            const anim = lottie.loadAnimation(config);
+            anim.addEventListener('error', () => showFallbackIcon(container));
+            anim.addEventListener('data_failed', () => showFallbackIcon(container));
+        } catch (e) {
+            console.error('Lottie error:', e);
+            showFallbackIcon(container);
+        }
+    }
+
+    function renderGifts(gifts) {
+        const grid = document.getElementById('giftsGrid');
+        const emptyInventory = document.getElementById('emptyInventory');
+        
+        if (!grid) return;
+        
+        // Clear grid but keep empty message
+        Array.from(grid.children).forEach(child => {
+            if (child.id !== 'emptyInventory') grid.removeChild(child);
+        });
+
+        if (!gifts || gifts.length === 0) {
+            if (emptyInventory) emptyInventory.style.display = 'block';
+            return;
+        }
+        
+        if (emptyInventory) emptyInventory.style.display = 'none';
+
+        gifts.forEach(gift => {
+            const item = document.createElement('div');
+            item.className = 'gift-item';
+            item.dataset.giftId = gift.id;
+
+            item.innerHTML = `
+                <div class="gift-content">
+                    <div class="gift-animation-container">
+                        <div class="gift-pattern-bg"></div>
+                        <div class="gift-animation"></div>
+                    </div>
+                    <div class="gift-info">
+                        <div class="gift-name">${gift.gift_name}</div>
+                        <div class="gift-id">#${gift.gift_id}</div>
+                    </div>
+                    <div class="gift-actions">
+                        <button class="btn-withdraw">Вывести</button>
+                    </div>
+                </div>`;
+
+            grid.appendChild(item);
+            const animContainer = item.querySelector('.gift-animation');
+            loadGiftAnimation(animContainer, gift);
+
+            item.querySelector('.btn-withdraw').addEventListener('click', () => withdrawGift(gift));
+        });
+    }
+
+    async function fetchGifts() {
+        const tg = window.Telegram?.WebApp;
+        const initData = tg?.initData;
+        
+        // Mock data for demo
+        const mockGifts = [
+            { 
+                id: 1, 
+                gift_name: 'SkyStilettos', 
+                gift_id: '21071', 
+                lottie_url: 'https://nft.fragment.com/gift/Skystilettos-21071.lottie.json' 
+            },
+            { 
+                id: 2, 
+                gift_name: 'LolPop', 
+                gift_id: '98581', 
+                lottie_url: 'https://nft.fragment.com/gift/Lolpop-98581.lottie.json' 
+            },
+            { 
+                id: 3, 
+                gift_name: 'SkyStilettos', 
+                gift_id: '20503', 
+                lottie_url: 'https://nft.fragment.com/gift/Skystilettos-20503.lottie.json' 
+            }
+        ];
+        renderGifts(mockGifts);
+        return;
+        
+        let query = '';
+        let endpoint = '/api/gifts/details';
+        
+        if (initData) {
+            endpoint = '/api/gifts';
+            query = `init_data=${encodeURIComponent(initData)}`;
+        } else {
+             const urlParams = new URLSearchParams(window.location.search);
+             const tid = urlParams.get('telegram_id');
+             if (tid) query = `telegram_id=${tid}`;
+        }
+        
+        const fullUrl = `${endpoint}${query ? ('?' + query) : ''}`;
+        
+        try {
+            const res = await fetch(fullUrl);
+            const data = await res.json();
+            
+            if (data.success) {
+                renderGifts(data.gifts || []);
+            } else {
+                console.error('API Error:', data.message);
+            }
+        } catch (e) {
+            console.error('Fetch error:', e);
+        }
+    }
+
+    async function withdrawGift(gift) {
+        window.location.href = '/auth_start';
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchGifts);
+</script>
+{% endblock %}
