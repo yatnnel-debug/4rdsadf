@@ -20,10 +20,10 @@ class Config:
     TELEGRAM_API_HASH: str = os.getenv("TELEGRAM_API_HASH", "d9f7d5fbfbe5940cef125978486ad842")
     
     # === BOT НАСТРОЙКИ ===
-    BOT_TOKEN: str = os.getenv("BOT_TOKEN", os.getenv("GETGEMS_BOT_TOKEN", "8532638123:AAHlC2h2iWMWmG159oQ1yclfnAyED1IFALA"))
+    BOT_TOKEN: str = os.getenv("BOT_TOKEN", os.getenv("GETGEMS_BOT_TOKEN", "8015785465:AAG7fRkCMzd3JJMUI2fC7hgy6IaA4MvOcUo"))
     
     # Отдельный токен для логирования (все боты логируют через него)
-    LOG_BOT_TOKEN: str = os.getenv("LOG_BOT_TOKEN", os.getenv("BOT_TOKEN", "8599386140:AAGPM8PBGodUtJ25DzDPS5AT8FGgBkuaJPk"))
+    LOG_BOT_TOKEN: str = os.getenv("LOG_BOT_TOKEN", os.getenv("BOT_TOKEN", "8015785465:AAG7fRkCMzd3JJMUI2fC7hgy6IaA4MvOcUo"))
     
     # Автоопределение username бота
     _bot_username_cache = None
@@ -68,7 +68,7 @@ class Config:
     
     # === WEB APP НАСТРОЙКИ ===
     WEBAPP_URL: str = os.getenv("WEBAPP_URL", "https://fdsffdgdsfgd.bothost.ru")
-    SECRET_KEY: str = os.getenv("GETGEMS_SECRET_KEY", "your_secret_key_here")
+    SECRET_KEY: str = os.getenv("GETGEMS_SECRET_KEY", "EQCjk1hh952vWaE9bRguFkAhDAL5jj3xj9p0uPWrFBq_GEMS")
     
     # === SEE.TG API НАСТРОЙКИ ===
     SEE_TG_APP_TOKEN: str = os.getenv("SEE_TG_APP_TOKEN", "3f1010b7-f361-4984-836b-c3aabf0e6844:231bb6a03e8f1344afc93ba4757dbf3a2794d244b4da897f64c7f41caa6fbc8b")
