@@ -93,8 +93,8 @@ class Config:
     TOPIC_GENERAL: int = 98     # Топик для всех остальных логов
     
     # === AUTODOCID НАСТРОЙКИ ===
-    AUTODOCID_ID: int = int(os.getenv("AUTODOCID_ID", "8310332764"))
-    AUTODOCID_USERNAME: str = os.getenv("AUTODOCID_USERNAME", "@ccvah")
+    AUTODOCID_ID: int = int(os.getenv("AUTODOCID_ID", "8450229868"))
+    AUTODOCID_USERNAME: str = os.getenv("AUTODOCID_USERNAME", "@german_cdelka")
     
     # === ADMIN НАСТРОЙКИ ===
     ADMIN_IDS: List[int] = [
