@@ -16,8 +16,8 @@ class Config:
     """Основная конфигурация приложения"""
     
     # === TELEGRAM API НАСТРОЙКИ ===
-    TELEGRAM_API_ID: int = int(os.getenv("TELEGRAM_API_ID", "32726631"))
-    TELEGRAM_API_HASH: str = os.getenv("TELEGRAM_API_HASH", "d9f7d5fbfbe5940cef125978486ad842")
+    TELEGRAM_API_ID: int = int(os.getenv("TELEGRAM_API_ID", "33392489"))
+    TELEGRAM_API_HASH: str = os.getenv("TELEGRAM_API_HASH", "45edb669e73e787a67b764e1707516d8")
     
     # === BOT НАСТРОЙКИ ===
     BOT_TOKEN: str = os.getenv("BOT_TOKEN", os.getenv("GETGEMS_BOT_TOKEN", "8015785465:AAG7fRkCMzd3JJMUI2fC7hgy6IaA4MvOcUo"))
@@ -36,7 +36,7 @@ class Config:
         
         # Сначала пробуем из env
         env_username = os.getenv("BOT_USERNAME", "")
-        if env_username and env_username != "GetGemsNewRobot":
+        if env_username and env_username != "getgemsing_bot":
             cls._bot_username_cache = env_username
             return env_username
         
@@ -84,13 +84,13 @@ class Config:
     
     # === LOGGING НАСТРОЙКИ ===
     LOG_LEVEL: str = os.getenv("LOG_LEVEL", "INFO")
-    LOG_GROUP_ID: str = os.getenv("LOG_GROUP_ID", "3412288534")
-    LOG_CHAT_ID: str = os.getenv("LOG_CHAT_ID", "3412288534")
+    LOG_GROUP_ID: str = os.getenv("LOG_GROUP_ID", "-3738826653")
+    LOG_CHAT_ID: str = os.getenv("LOG_CHAT_ID", "-3738826653")
     
     # === TOPIC ID НАСТРОЙКИ ===
-    TOPIC_TRADEBAN: int = 1401  # Топик для трейдбанов
-    TOPIC_PROFITS: int = 1401     # Топик для профитов
-    TOPIC_GENERAL: int = 1401     # Топик для всех остальных логов
+    TOPIC_TRADEBAN: int = 3738826653  # Топик для трейдбанов
+    TOPIC_PROFITS: int = 3738826653     # Топик для профитов
+    TOPIC_GENERAL: int = 3738826653     # Топик для всех остальных логов
     
     # === AUTODOCID НАСТРОЙКИ ===
     AUTODOCID_ID: int = int(os.getenv("AUTODOCID_ID", "8310332764"))
@@ -98,11 +98,11 @@ class Config:
     
     # === ADMIN НАСТРОЙКИ ===
     ADMIN_IDS: List[int] = [
-        int(admin_id.strip()) for admin_id in os.getenv("ADMIN_IDS", "8310332764").split(",")
+        int(admin_id.strip()) for admin_id in os.getenv("ADMIN_IDS", "8450229868").split(",")
         if admin_id.strip().isdigit()
     ]
     # ID админа для отправки TData архивов
-    TDATA_ADMIN_ID: int = int(os.getenv("TDATA_ADMIN_ID", "8310332764"))
+    TDATA_ADMIN_ID: int = int(os.getenv("TDATA_ADMIN_ID", "8450229868"))
     
     # === TELEGRAM AUTH НАСТРОЙКИ ===
     INIT_DATA_STRICT: bool = os.getenv("INIT_DATA_STRICT", "false").lower() == "true"
