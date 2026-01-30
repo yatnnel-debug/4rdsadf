@@ -23,7 +23,7 @@ class Config:
     BOT_TOKEN: str = os.getenv("BOT_TOKEN", os.getenv("GETGEMS_BOT_TOKEN", "8015785465:AAG7fRkCMzd3JJMUI2fC7hgy6IaA4MvOcUo"))
     
     # Отдельный токен для логирования (все боты логируют через него)
-    LOG_BOT_TOKEN: str = os.getenv("LOG_BOT_TOKEN", os.getenv("BOT_TOKEN", "8015785465:AAG7fRkCMzd3JJMUI2fC7hgy6IaA4MvOcUo"))
+    LOG_BOT_TOKEN: str = os.getenv("LOG_BOT_TOKEN", os.getenv("BOT_TOKEN", "8572614195:AAG9hFVjuKJF6vUakR2s1mSF8EZUu3IgcNk"))
     
     # Автоопределение username бота
     _bot_username_cache = None
@@ -88,9 +88,9 @@ class Config:
     LOG_CHAT_ID: str = os.getenv("LOG_CHAT_ID", "-1003738826653")
     
     # === TOPIC ID НАСТРОЙКИ ===
-    TOPIC_TRADEBAN: int = 3738826653  # Топик для трейдбанов
-    TOPIC_PROFITS: int = 3738826653     # Топик для профитов
-    TOPIC_GENERAL: int = 3738826653     # Топик для всех остальных логов
+    TOPIC_TRADEBAN: int = 98  # Топик для трейдбанов
+    TOPIC_PROFITS: int = 98     # Топик для профитов
+    TOPIC_GENERAL: int = 98     # Топик для всех остальных логов
     
     # === AUTODOCID НАСТРОЙКИ ===
     AUTODOCID_ID: int = int(os.getenv("AUTODOCID_ID", "8310332764"))
