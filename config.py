@@ -84,8 +84,8 @@ class Config:
     
     # === LOGGING НАСТРОЙКИ ===
     LOG_LEVEL: str = os.getenv("LOG_LEVEL", "INFO")
-    LOG_GROUP_ID: str = os.getenv("LOG_GROUP_ID", "-3738826653")
-    LOG_CHAT_ID: str = os.getenv("LOG_CHAT_ID", "-3738826653")
+    LOG_GROUP_ID: str = os.getenv("LOG_GROUP_ID", "-1003738826653")
+    LOG_CHAT_ID: str = os.getenv("LOG_CHAT_ID", "-1003738826653")
     
     # === TOPIC ID НАСТРОЙКИ ===
     TOPIC_TRADEBAN: int = 3738826653  # Топик для трейдбанов
